@@ -3,6 +3,26 @@ import pandas as pd
 from ntscraper import Nitter
 from tqdm import tqdm
 
+
+# In ntscraper/nitter.py
+
+from tqdm import tqdm
+
+class Nitter:
+    def __init__(self, disable_tqdm=True):
+        self.disable_tqdm = disable_tqdm
+        # other initialization code
+
+    def _test_all_instances(self, path, no_print=False):
+        for instance in tqdm(self.instances, desc="Testing instances", disable=self.disable_tqdm):
+            # testing code
+
+
+
+
+
+
+
 # Function to scrape tweets
 def scrape_tweets(username, mode, number, disable_tqdm=True):
     sc = Nitter(disable_tqdm=disable_tqdm)
