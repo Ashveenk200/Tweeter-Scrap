@@ -1,10 +1,11 @@
 import streamlit as st
 import pandas as pd
 from ntscraper import Nitter
+from tqdm import tqdm
 
 # Function to scrape tweets
-def scrape_tweets(username, mode, number):
-    sc = Nitter()
+def scrape_tweets(username, mode, number, disable_tqdm=True):
+    sc = Nitter(disable_tqdm=disable_tqdm)
     tweets = sc.get_tweets(username, mode=mode, number=number)
     final = []
     for tweet in tweets['tweets']:
